@@ -1,90 +1,31 @@
-<?php 
-// class Student{
-//     public $name;
-//     public $age;
-//     public function __construct($name,$age){
-//         $this->name=$name; //this->name= toangngo92
-//         $this->name ="ABC"; //this->name = abc
-//         $this->age=$age;
-//     }
-//     public function getName(){
-//         return $this->name;
-//     }
-// }
-// $ongtoan = new Student('Toanngo92',21);
-// echo $ongtoan->getName();
-
-// switch(8.0){
-//     case 8.0:
-//         $result="Oh no!";
-//         break;
-//     case '8.0':
-//         $result="This is what I expected!";
-//         break;
-//     }
-//     echo $result;
-
-// $N = 345;
-
-echo"Bai 1:"."<br/>";
-
-$string ='345';
-echo "chuoi so: ". $string."<br/>";
-
-echo "so thu nhat: ". $string[0]."<br/>";
-echo "so thu hai: ". $string[1]."<br/>";
-echo "so thu ba: ". $string[2]."<br/>";
-
-// echo"Bai 2:"."<br/>";
-
-// class Student{
-//     public $name;
-//     public $age;
-// }
-// for($i=0;$i<count($lst_sv);$i++){
-//     echo 
-// }
-
-echo"Bai 3:"."<br/>";
-class Employee{
-    public $name;
-    public $age;
-    public $interest;
-    public function __construct($nameparam,$ageparam,$interestparam){
-        $this->name=$nameparam;
-        $this->age=$ageparam;
-        $this->interest=$interestparam;
-    }
-    public function getName(){
-        return $this->name ;
-    }
-    public function getAge(){
-        return $this->age ;
-    }
-    public function getInterest(){
-        return $this->interest ;
-    }
-    public function setName($newName){
-        
-        return $this->name=$newName;
-    }
-    public function setAge($newAge){
-        $this->age=$newAge;
-    }
-    public function setInterest($newInterest){
-        $this->interest=$newInterest;
-    }
-    public function goToWork(){
-        echo "go to work";
-    }
-}
-$person1 = new Employee("Huy",22,"Manga");
-$person2 = new Employee("Hoang",22,"Manga");
-$person3 = new Employee("Danh",22,"Manga");
-
-echo "So tuoi la: ".$person1->getAge(). "<br/>" ;
-
-echo "Ten cu la:". $person2->getName(). "<br/>";
-echo "Ten moi duoc set: ". $person2->setName('HuyAnh')."<br/>";
-echo "Ten sau khi set: ".$person2->getName();
-// echo"Bai 4:"."<br/>";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form  method ="post" action="check.php">
+        <label>Username: <input name = "Username" type="text" required minlength="7"></label>
+        <?php 
+            if(!empty($_GET)){
+                if($_GET["error"]== "Username"){
+                    echo "<p style='color:red;'> Please enter your Username!</p>";
+                }
+            }
+        ?>
+        <br>
+        <label>Passowrd: <input name="password" type="password" required minlength="7"></label>
+        <?php 
+            if(!empty($_GET)){
+                if($_GET["error"]== "password"){
+                    echo "<p style='color:red;'> Please enter your password!</p>";
+                }
+            }
+        ?>
+        <button>Submit</button>
+    </form>
+</body>
+</html>
